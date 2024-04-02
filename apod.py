@@ -1,8 +1,8 @@
-
 import requests
 import os
 from urllib.parse import urlparse, unquote
-from downloads_images import downloads_images
+from download_images import download_images
+
 
 def get_extension(url):
     decoded_url = unquote(url)
@@ -11,12 +11,13 @@ def get_extension(url):
     file_name, extension = os.path.splitext(fullname)
     return extension, file_name
 
-def fetch_nasa_apod():
-    nasa_token = '2pzXEr6S459lIrdI9Ndw0oz5MAFnt2aFfCwuMit2'
+
+def fetch_nasa_apod(nasa_token):
     nasa_apod_url = "https://api.nasa.gov/planetary/apod"
+    count = 30
     params = {
         'api_key': nasa_token,
-        'count': 30
+        'count': count
     }
     response = requests.get(nasa_apod_url, params=params)
     links = response.json()
@@ -28,13 +29,13 @@ def fetch_nasa_apod():
                 nasa_link = link['url']
         extension, file_name = get_extension(nasa_link)
         path = os.path.join('images',f'{file_name}{extension}')
-        downloads_images(path, nasa_link)
-
-
+        download_images(path, nasa_link)
 
 
 def main():
-    fetch_nasa_apod()
+    nasa_token = os.environ['NASA_TOKEN']
+    fetch_nasa_apod(nasa_token)
+
 
 if __name__ == '__main__':
     main()

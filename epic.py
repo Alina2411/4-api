@@ -12,7 +12,7 @@ def fetch_nasa_epic(nasa_token):
         'count': count
     }
     response = requests.get(nasa_epic_url, params=params)
-    epic_image = response.json()
+    epic_images = response.json()
     for image in epic_image:
       epic_name = image['image']
       epic_date = image['date']

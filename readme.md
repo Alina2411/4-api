@@ -31,7 +31,7 @@ python epic.py
 ```
 NASA_TOKEN = "API_KEY"
 TG_TOKEN = "BOT_TOKEN"
-CHAT_ID = "@TG_CHAT_ID"
+TG_CHAT_ID = "@TG_CHAT_ID"
 ```
 Получить ```nasa_token``` можно на сайте [Nasa](https://api.nasa.gov/#apod). Получить ```tg_token``` можно у отца ботов. В описании канала получите название и положите в переменную ```chat_id```
 

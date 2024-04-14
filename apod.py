@@ -1,7 +1,7 @@
 import requests
 import os
 from urllib.parse import urlparse, unquote
-from download_images import download_images
+from download_image import download_image
 
 
 def get_extension(url):

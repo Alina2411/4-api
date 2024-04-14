@@ -1,7 +1,7 @@
 import requests
 import os
 import datetime
-from download_images import download_images
+from download_image import download_image
 
 
 def fetch_nasa_epic(nasa_token):

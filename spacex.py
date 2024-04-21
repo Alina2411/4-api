@@ -9,7 +9,7 @@ def fetch_spacex_last_launch(launch_id):
     links = response.json()['links']['flickr']['original']
     for number_link, link in enumerate(links):
         file_name = f'images/spacex{number_link}.jpg'
-        download_images(file_name, link)
+        download_image(file_name, link)
 
 
 def main():

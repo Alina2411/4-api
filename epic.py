@@ -19,7 +19,7 @@ def fetch_nasa_epic(nasa_token):
       epic_date = datetime.datetime.fromisoformat(epic_date).strftime('%Y/%m/%d')                
       epic_url= f'https://api.nasa.gov/EPIC/archive/natural/{epic_date}/png/{epic_name}.png'
       path = os.path.join('images',f'{epic_name}.png')
-      download_images(path, epic_url, params)
+      download_image(path, epic_url, params)
 
 
 def main():

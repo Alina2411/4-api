@@ -29,7 +29,7 @@ def fetch_nasa_apod(nasa_token):
                 nasa_link = link['url']
         extension, file_name = get_extension(nasa_link)
         path = os.path.join('images',f'{file_name}{extension}')
-        download_images(path, nasa_link)
+        download_image(path, nasa_link)
 
 
 def main():
